@@ -6,14 +6,14 @@ public class energy : MonoBehaviour {
 
     //public elevator other;
     bool playerInside = false;
-    public GameObject painel;
+    //public GameObject painel;
     //public int numeroAndar;
 
     public GameObject botaoE;
     // Use this for initialization
     void Start()
     {
-        //PlayerPrefs.SetInt("andar", 0);
+        PlayerPrefs.SetInt("andar", 0);
     }
 
     // Update is called once per frame

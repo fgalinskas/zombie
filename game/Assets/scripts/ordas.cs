@@ -19,7 +19,7 @@ public class ordas : MonoBehaviour {
     public int cooldownOrda2 = 20;
     public int cooldownOrda3 = 40;
     void Start () {
-        PlayerPrefs.SetInt("luz", 1);
+        PlayerPrefs.SetInt("luz", 0);
 
     }
 

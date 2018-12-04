@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class display : MonoBehaviour {
    
     public Text ammoCount;
+    public Text bolsaCount;
     int ammo2;
     public GameObject player;
     // Use this for initialization
@@ -23,7 +24,7 @@ public class display : MonoBehaviour {
     void diplayAmmo()
     {
         ammoCount.text = "Count: " + player.GetComponent<weapon>().ammo;
-
+        bolsaCount.text = "Count: " + player.GetComponent<weapon>().bolsa;
     }
 
     private void OnTriggerEnter(Collider other)

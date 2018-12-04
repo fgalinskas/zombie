@@ -5,9 +5,11 @@ using UnityEngine.AI;
 
 public class IAcontrol : MonoBehaviour {
 
+    //public GameObject playerWeaponRef;
     public GameObject tgt; //target
     Rigidbody playerrdb;
-
+    public bool lifeCheck = false;
+    public int life = 10;
     NavMeshAgent agent;
 	//public GameObject gotoposition;
     GameObject player;
@@ -27,15 +29,20 @@ public class IAcontrol : MonoBehaviour {
 	
 	
 	void Update () {
-        
+        print(tgt.GetComponent<weapon>().lifeZombie);
         agent.destination = tgt.transform.position;
 	}
 
     public void Damage() {
+       
+            life--;
 
-        anim.enabled = false;
-        agent.enabled = false;
-        Destroy(gameObject,5);
+        if (life <= 0) {
+            anim.enabled = false;
+            agent.enabled = false;
+            Destroy(gameObject, 5);
+        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
