@@ -14,12 +14,14 @@ public class elevator : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        //PlayerPrefs.SetInt("andar",1);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //floor = PlayerPrefs.GetInt("andar");
+
         transform.position = Vector3.Lerp(transform.position, floorposition[floor], Time.deltaTime);
 
         if (Vector3.Distance(transform.position, floorposition[floor]) < 0.1f)

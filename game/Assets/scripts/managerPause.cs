@@ -13,13 +13,14 @@ public class managerPause : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-		
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.P))
         {
+            Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             pause.SetActive(true);
@@ -67,7 +68,8 @@ public class managerPause : MonoBehaviour {
     public void continuePause() {
         pause.SetActive(false);
         Time.timeScale = 1;
-        
+        Cursor.visible = false;
+
 
     }
 }

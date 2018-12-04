@@ -14,7 +14,8 @@ public class movement : MonoBehaviour {
     Vector3 vecLook = Vector3.zero;
 
     void Start () {
-       
+
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         CharCtrl = GetComponent<CharacterController>();	
 	}
@@ -31,7 +32,8 @@ public class movement : MonoBehaviour {
 	void Update () {
 
         if (Time.timeScale == 1) {
-            Cursor.visible = true;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             ControlPlayer();
             CharCtrl.Move(transform.TransformDirection(vecMove * velocity));
             transform.Rotate(Vector3.up, vecLook.y);
