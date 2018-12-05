@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class IAcontrol : MonoBehaviour {
 
     //public GameObject playerWeaponRef;
+    public GameObject morte;
+    public Collider col;
     public GameObject tgt; //target
     Rigidbody playerrdb;
     public bool lifeCheck = false;
@@ -29,8 +31,11 @@ public class IAcontrol : MonoBehaviour {
 	
 	
 	void Update () {
-        print(tgt.GetComponent<weapon>().lifeZombie);
-        agent.destination = tgt.transform.position;
+        //print(tgt.GetComponent<weapon>().lifeZombie);
+        if (life > 0) {
+            agent.destination = tgt.transform.position;
+        }
+        
 	}
 
     public void Damage() {
@@ -40,7 +45,7 @@ public class IAcontrol : MonoBehaviour {
         if (life <= 0) {
             anim.enabled = false;
             agent.enabled = false;
-            Destroy(gameObject, 5);
+            Destroy(gameObject, 2);
         }
         
     }
@@ -50,7 +55,16 @@ public class IAcontrol : MonoBehaviour {
         if (other.gameObject.CompareTag("Player"))
         {
             tgt = other.gameObject;
-                 
+            Destroy(col);
+            
+
+            //col.enabled = false;
+            Invoke("morteTela", 2);
         }
+    }
+
+    public void morteTela() {
+        morte.SetActive(true);
+
     }
 }

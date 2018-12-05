@@ -10,10 +10,11 @@ public class managerPause : MonoBehaviour {
     public float focal_length;
     public GameObject pause;
     public bool pauseCheck = false;
+    public GameObject telaMorte;
     
 	// Use this for initialization
 	void Start () {
-        
+        PlayerPrefs.SetInt("morte_0", 0);
     }
 	
 	// Update is called once per frame
@@ -24,6 +25,14 @@ public class managerPause : MonoBehaviour {
             Cursor.lockState = CursorLockMode.None;
             Time.timeScale = 0;
             pause.SetActive(true);
+        }
+
+        if (PlayerPrefs.GetInt("morte_0") == 1) {
+            telaMorte.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            Time.timeScale = 0;
+            
         }
     }
 
@@ -71,5 +80,10 @@ public class managerPause : MonoBehaviour {
         Cursor.visible = false;
 
 
+    }
+
+    public void cenaToGo(string cena)
+    {
+        myLoad.Loading(cena);
     }
 }

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 5ccb0ebebf8f4ec4ea84059d0056f11c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 100
+  forceTextureCase: -1
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: BLOODSEEKER DEMO
+  fontNames:
+  - BLOODSEEKER DEMO
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 3
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

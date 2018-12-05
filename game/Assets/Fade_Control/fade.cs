@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class fade : MonoBehaviour {
 
+    public string cenaFinal;
     public Animator anim;
+
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +16,15 @@ public class fade : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (PlayerPrefs.GetInt("final") == 1)
+        {
+            anim.SetBool("fade", false);
+            Invoke("cenaToGo", 4);
+        }
+    }
+
+    public void cenaToGo()
+    {
+        myLoad.Loading(cenaFinal);
+    }
 }

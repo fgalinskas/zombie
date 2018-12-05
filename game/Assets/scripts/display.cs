@@ -7,6 +7,8 @@ public class display : MonoBehaviour {
    
     public Text ammoCount;
     public Text bolsaCount;
+
+    public GameObject recarregar;
     int ammo2;
     public GameObject player;
     // Use this for initialization
@@ -19,12 +21,22 @@ public class display : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         diplayAmmo();
+
+        if (player.GetComponent<weapon>().ammo<10)
+        {
+            recarregar.SetActive(true);
+
+        }
+        else {
+            recarregar.SetActive(false);
+        }
+        
     }
 
     void diplayAmmo()
     {
-        ammoCount.text = "Count: " + player.GetComponent<weapon>().ammo;
-        bolsaCount.text = "Count: " + player.GetComponent<weapon>().bolsa;
+        ammoCount.text = "" + player.GetComponent<weapon>().ammo;
+        bolsaCount.text = "AMMO: " + player.GetComponent<weapon>().bolsa;
     }
 
     private void OnTriggerEnter(Collider other)

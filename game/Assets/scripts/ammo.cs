@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ammo : MonoBehaviour {
 
+    public AudioSource catchSound;
     bool playerInside = false;
     public GameObject botaoE;
     //public GameObject player;
@@ -26,7 +27,8 @@ public class ammo : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 PlayerPrefs.SetInt("recarregar", 1);
-                gameObject.SetActive(false);
+                catchSound.Play(0);
+                Invoke("desativar", 0.5f);
 
             }
         }
@@ -42,5 +44,9 @@ public class ammo : MonoBehaviour {
     {
         playerInside = false;
         botaoE.SetActive(false);
+    }
+
+    public void desativar() {
+        gameObject.SetActive(false);
     }
 }

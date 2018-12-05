@@ -18,6 +18,7 @@ public class ordas : MonoBehaviour {
     public int cooldownOrda1 = 5;
     public int cooldownOrda2 = 20;
     public int cooldownOrda3 = 40;
+    public int cooldownfinal = 60;
     void Start () {
         PlayerPrefs.SetInt("luz", 0);
 
@@ -29,20 +30,20 @@ public class ordas : MonoBehaviour {
             PlayerPrefs.SetInt("luz", 0);
         }
         if (orda_0) {
-            numeroZombies = 5;
+            numeroZombies = 3;
             Invoke("spawn", cooldownOrda1);
         }
 
         if (orda_1)
         {
-            numeroZombies = 10;
+            numeroZombies = 4;
             Invoke("spawn1", cooldownOrda2);
             
         }
 
         if (orda_2)
         {
-            numeroZombies = 20;
+            numeroZombies = 5;
             Invoke("spawn2", cooldownOrda3);
         }
     }
@@ -73,6 +74,7 @@ public class ordas : MonoBehaviour {
             orda_1 = false;
             orda_2 = true;
             countZombie = 0;
+            Invoke("finalJogo", cooldownfinal);
         }
     }
 
@@ -89,5 +91,9 @@ public class ordas : MonoBehaviour {
             orda_2 = false;
             countZombie = 0;
         }
+    }
+    public void finalJogo() {
+        PlayerPrefs.SetInt("tremChegou", 1);
+
     }
 }
