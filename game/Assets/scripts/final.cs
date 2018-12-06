@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class final : MonoBehaviour {
 
+
+    public GameObject brake;
     public Animator animTrain;
 	// Use this for initialization
 	void Start () {
@@ -15,8 +17,10 @@ public class final : MonoBehaviour {
         if (PlayerPrefs.GetInt("tremChegou") == 1)
         {
             animTrain.SetBool("end", true);
+            brake.SetActive(true);
         }
     }
 
+   
     
 }

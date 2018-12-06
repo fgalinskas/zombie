@@ -33,7 +33,7 @@ public class IAcontrol : MonoBehaviour {
 	void Update () {
         //print(tgt.GetComponent<weapon>().lifeZombie);
         if (life > 0) {
-            agent.destination = tgt.transform.position;
+           
         }
         
 	}
@@ -55,6 +55,7 @@ public class IAcontrol : MonoBehaviour {
         if (other.gameObject.CompareTag("Player"))
         {
             tgt = other.gameObject;
+            agent.destination = tgt.transform.position;
             Destroy(col);
             
 

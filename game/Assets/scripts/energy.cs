@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class energy : MonoBehaviour {
 
+    public AudioSource lighIsOn;
     //public elevator other;
     bool playerInside = false;
     //public GameObject painel;
@@ -24,7 +25,7 @@ public class energy : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 PlayerPrefs.SetInt("luz", 1);
-
+                lighIsOn.Play(0);
             }
         }
 

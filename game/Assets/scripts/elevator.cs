@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class elevator : MonoBehaviour
 {
-
+    public AudioSource doorOpen;
     bool playerInside = false;
     public int floor = 0;
     public Vector3[] floorposition;
@@ -38,6 +38,7 @@ public class elevator : MonoBehaviour
 
         if (Vector3.Distance(transform.position, floorposition[floor]) < 0.1f)
         {
+            doorOpen.Play(0);
             myDoor.SetBool("opened", true);
             floordoor[floor].SetBool("opened", true);
             CancelInvoke("Translating");
@@ -49,6 +50,7 @@ public class elevator : MonoBehaviour
         if (playerInside == true) {
             floordoor[floor].SetBool("opened", false);
             myDoor.SetBool("opened", false);
+            doorOpen.Stop();
             if (golevel >= 0 && golevel < floorposition.Length)
             {
                 floor = golevel;

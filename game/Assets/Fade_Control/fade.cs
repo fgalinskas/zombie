@@ -21,10 +21,16 @@ public class fade : MonoBehaviour {
             anim.SetBool("fade", false);
             Invoke("cenaToGo", 4);
         }
+
     }
 
     public void cenaToGo()
     {
         myLoad.Loading(cenaFinal);
+    }
+
+    public void fadeOutAnim() {
+        anim.SetBool("fade", false);
+        Invoke("cenaToGo", 3);
     }
 }
