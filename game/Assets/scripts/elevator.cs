@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class elevator : MonoBehaviour
 {
+    public AudioSource doorSound;
     public AudioSource doorOpen;
     bool playerInside = false;
     public int floor = 0;
@@ -64,6 +65,7 @@ public class elevator : MonoBehaviour
        
             floordoor[floor].SetBool("opened", false);
             myDoor.SetBool("opened", false);
+        doorSound.Play(0);
             if (golevel >= 0 && golevel < floorposition.Length)
             {
                 floor = golevel;

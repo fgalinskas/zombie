@@ -9,6 +9,8 @@ public class energy : MonoBehaviour {
     bool playerInside = false;
     //public GameObject painel;
     //public int numeroAndar;
+    public GameObject questLog_0;
+    public GameObject questLog_1;
 
     public GameObject botaoE;
     // Use this for initialization
@@ -25,6 +27,8 @@ public class energy : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 PlayerPrefs.SetInt("luz", 1);
+                questLog_0.SetActive(false);
+                questLog_1.SetActive(true);
                 lighIsOn.Play(0);
             }
         }
