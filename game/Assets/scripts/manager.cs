@@ -26,4 +26,9 @@ public class manager : MonoBehaviour {
     public void cenaToGo() {
         myLoad.Loading(level);
     }
+
+    public void exitButton()
+    {
+        Application.Quit();
+    }
 }
